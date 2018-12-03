@@ -16,7 +16,7 @@
 let audi = new Car("blue", 4, {volume: 2.0, power: 225});
 let bmw = new Car("black", 4, {volume: 2.5, power: 335});
 */
-
+/*
 function Vehicle() {
     this.x = 0;
     this.y = 0;
@@ -39,3 +39,5 @@ Car.prototype = Object.create(Vehicle.prototype);
 Car.prototype.constructor = Car;
 
 let audi = new Car();
+*/
+
