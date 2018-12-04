@@ -40,9 +40,11 @@ Menu.prototype.render = function() {
     result += "</ul>";
     return result;
 }
-// let menu = new Menu("menuId", "menuClass", mItems);
-// Выведем в консоль что у нас сейчас в методе render()
-// console.log(menu.render());
+// Добавляем метод removeMenu для Menu
+Menu.prototype.removeMenu = function() {
+    // Тут просто надо найти в DOM объект по id и удалить его.
+    document.getElementById('menuId').remove();
+}
 
 //Функция конструктор для пункта меню
 //Отрисовывает конкретный пункт
@@ -67,5 +69,9 @@ let mItems = {0: mItem1, 1: mItem2, 2: mItem3};
 let menu = new Menu("menuId", "menuClass", mItems);
 console.log(menu.render());
 let div = document.write(menu.render());
-document.body.innerHTML = menu.render();
+let nav = document.createElement('nav');
+document.body.appendChild(nav);
+document.getElementsByTagName('nav')[0].innerHTML = menu.render();
+
+document.getElementById('btn').addEventListener('click', menu.removeMenu);
 
